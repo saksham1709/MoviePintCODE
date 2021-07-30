@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+nav{
+    z-index: 1;
+    position: sticky;
+    top: 0;
+}
+/* .logo{ */
+/* .nav-logo .logo{    
+    color:saddlebrown;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(6vw,1.9vw);
+} */
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.navbar.active{
+    background: white;
+}
+.nav-logo a{
+    text-decoration: none;
+}
+.nav-logo h2{
+    /* color: white; */
+    color:saddlebrown;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(90%,112%);
+}
+.nav-logo.active h2{
+    color: black;
+}
+.nav-logo.active .logo{
+    color: black;
+}
+.nav-logo, .nav-links, .nav-social{
+    margin: 20px auto;
+}
+.nav-toggle{
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    display: none;
+}
+.nav-toggle > div{
+    background-color: saddlebrown;
+}
+.nav-toggle.active > div{
+    background-color: black;
+}
+.line , .line1 , .line2 , .line3{
+    width: 33px;
+    /* background-color: white; */
+    height: 4px;
+    margin: 5px 3px;
+    transition: all .3s;
+}
+.nav-toggle:hover .line, .line1 , .line2, .line3{
+    background-color: #49a6e9;
+}
+.line1{
+    transform:rotate(45deg) translate(6px,1px);
+}
+.line2{
+    transition: all .01s;
+    visibility: hidden;
+}
+.line3{
+    transform:rotate(-45deg) translate(11px,-7px);;
+}
+.links-list, .links-list-mobile{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content:end;
+    margin-right: 1rem;
+}
+.social-list ,.social-list-mobile{
+    list-style: none;
+    display: flex;
+}
+.links-list li, .social-list li, .links-list-mobile li, .social-list-mobile li {
+    margin: 0 5px; 
+}
+.nav-links a{
+    color: saddlebrown;
+}
+.nav-links.active a{
+    color: black;
+}
+.links-list li a, .social-list li a ,.links-list-mobile li a , .social-list-mobile li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px;
+    transition: all .3s;
+}
+.links-list li a:hover{
+    background-color:#49a6e9;
+    border-radius: 5px;
+    color: white;
+}
+@media screen and (max-width: 850px){
+    /* .navbar{
+        position: relative;
+    } */
+    /* .logo{
+        transform: translate(16vw,4.8vw);
+    } */
+    .links-list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+        background-color: #49a6e9;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    .links-list-mobile{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 400px;
+        background-color: #49a6e9;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        opacity: 1;
+        z-index: 1;
+        transition: all 0.5s;
+    }
+    .social-list{
+        background-color: white;
+        padding: 15px;
+        list-style: none;
+        display: flex;
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        justify-content: center;
+        top: 425%;
+        transition: all 0.5s;
+    }
+    .social-list-mobile{
+        background-color: white;
+        padding: 15px;
+        list-style: none;
+        display: flex;
+        margin: 10px auto;
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        justify-content: center;
+        top: 425%;
+        transition: all .5s;
+    }
+    .links-list li, .links-list-mobile li{
+        margin-left:-35px; 
+    }
+    .links-list li a, .links-list-mobile li a{
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        display: table;
+    }
+    .links-list-mobile li a:hover , .links-list-mobile li a:hover{
+        background-color: #4e9bd3;
+        border-radius: 0;
+    }
+    .nav-toggle{
+        display: block;
+    }
+}
